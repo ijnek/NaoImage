@@ -22,7 +22,7 @@ if [ -d ./root-sdk ]; then
 fi
 
 mkdir -p ./root-sdk
-debootstrap --variant=buildd --no-merged-usr --exclude=usrmerge --arch=amd64 jammy ./root-sdk http://de.archive.ubuntu.com/ubuntu
+sudo debootstrap --variant=buildd --no-merged-usr --exclude=usrmerge --arch=amd64 jammy ./root-sdk http://de.archive.ubuntu.com/ubuntu
 
 cat - <<"EOT" > ./root-sdk/etc/apt/sources.list
 deb http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse

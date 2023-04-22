@@ -1,6 +1,6 @@
 # generate root filesystem
 mkdir -p ./root
-debootstrap --variant=minbase --arch=amd64 jammy ./root http://de.archive.ubuntu.com/ubuntu
+sudo debootstrap --variant=minbase --arch=amd64 jammy ./root http://de.archive.ubuntu.com/ubuntu
 
 cat - <<"EOT" > ./root/etc/apt/sources.list
 deb http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
