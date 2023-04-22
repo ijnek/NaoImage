@@ -24,7 +24,7 @@ fi
 mkdir -p ./root-sdk
 sudo debootstrap --variant=buildd --no-merged-usr --exclude=usrmerge --arch=amd64 jammy ./root-sdk http://de.archive.ubuntu.com/ubuntu
 
-cat - <<"EOT" > ./root-sdk/etc/apt/sources.list
+sudo sh -c 'sudo cat - <<"EOT" > ./root-sdk/etc/apt/sources.list
 deb http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
 #deb-src http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
 
@@ -36,7 +36,7 @@ deb http://de.archive.ubuntu.com/ubuntu jammy-security main restricted universe 
 
 deb http://de.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
 #deb-src http://de.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
-EOT
+EOT'
 
 
 # install packages, run ldconfig and add users and groups

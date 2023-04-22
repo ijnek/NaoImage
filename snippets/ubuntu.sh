@@ -2,7 +2,7 @@
 mkdir -p ./root
 sudo debootstrap --variant=minbase --arch=amd64 jammy ./root http://de.archive.ubuntu.com/ubuntu
 
-cat - <<"EOT" > ./root/etc/apt/sources.list
+sudo sh -c 'sudo cat - <<"EOT" > ./root/etc/apt/sources.list
 deb http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
 #deb-src http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
 
@@ -14,7 +14,7 @@ deb http://de.archive.ubuntu.com/ubuntu jammy-security main restricted universe 
 
 deb http://de.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
 #deb-src http://de.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
-EOT
+EOT'
 
 # mount original nao image
 mkdir -p ./nao
